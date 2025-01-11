@@ -6,32 +6,106 @@
     <title>Welcome to Goodlyfe Gyms</title>
 
     <link rel="stylesheet" href="style.css">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <a class="logo" href="/">Good<span>lyfe</span></a>
-            <ul>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">Timetable</a></li>
-                <li><a href="#">Clubs</a></li>
-                <li><a href="#">Nutrition</a></li>
-                <li><a href="#">Free Trial</a></li>
-                <li><a class="search" href="#">Search<img src="img/search-icon.svg"></a></li>
-            </ul>
-            <a class="login" href="#">Login</a>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Timetable</a></li>
+                    <li><a href="#">Clubs</a></li>
+                    <li><a href="#">Nutrition</a></li>
+                    <li><a href="#">Free Trial</a></li>
+                    <li><a class="search" href="#">Search<img src="img/search-icon.svg"></a></li>
+                </ul>
+                <a class="login" href="#">Login</a>
+            </div>
         </nav>
     </header>
-    <main>
 
+    <main>
+        <section class="hero-block">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h1>Welcome to Good<span>lyfe</span>&nbsp;Gyms</h1>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1>Welcome to Good<span>lyfe</span>&nbsp;Gyms</h1>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1>Welcome to Good<span>lyfe</span>&nbsp;Gyms</h1>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1>Welcome to Good<span>lyfe</span>&nbsp;Gyms</h1>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h1>Welcome to Good<span>lyfe</span>&nbsp;Gyms</h1>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="benefit-block container" id="new-body">
+            <div class="benefit-images">
+                <img class="back-image" src="img/benefit-1-1.jpg">
+                <img class="front-image" src="img/benefit-1-2.jpg">
+            </div>
+            <div class="benefit-content">
+                <h4>Meet your new body</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risus, ut imperdiet augue.</p>
+                <a class="cta-button white-bg" href="#">View the FAQ</a>
+            </div>
+        </section>
+
+        <section class="secondary-slider-block">
+            <div class="swiper secondary-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h2>Become more than you are.</h2>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Become more than you are.</h2>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Become more than you are.</h2>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Become more than you are.</h2>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <h2>Become more than you are.</h2>
+                        <a class="cta-button" href="#">See the benefits</a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
     </main>
+
     <footer>
 
     </footer>
-    <h1>test</h1>
 </body>
 </html>
