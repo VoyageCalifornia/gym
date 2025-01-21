@@ -1,7 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -57,10 +56,6 @@ module.exports = {
                     },
                 },
             },
-            {
-                test: /\.html$/,
-                use: ['html-loader'],
-            },
         ],
     },
 
@@ -68,26 +63,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
         }),
-        new HtmlWebpackPlugin({
-            title: 'Welcome to Goodlyfe Gym',
-            filename: 'index.html',
-            template: './src/index.html',
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Thank You - Goodlyfe Gym',
-            filename: 'thank-you.html',
-            template: './src/thank-you.html',
-        }),
         new CopyWebpackPlugin({
             patterns: [
             {
                 from: path.resolve(__dirname, 'src/backend'),
                 to: path.resolve(__dirname, 'dist/backend'),
-            },
-            {
-                from: path.resolve(__dirname, '.htaccess'),
-                to: path.resolve(__dirname, 'dist/.htaccess'),
-                toType: 'file',
             },
             ],
         }),
