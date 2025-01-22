@@ -114,7 +114,7 @@ contactForm.onsubmit = e => {
     return;
   }
 
-  fetch('/backend/email.php', {
+  fetch(customData.themePath + '/dist/backend/email.php', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     mode: 'same-origin',
