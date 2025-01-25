@@ -3,7 +3,7 @@
         <div class="footer-main">
             <div class="footer-col footer-social">
                 <p class="footer-logo">Good<span>lyfe</span></p>
-                <p class="footer-description">Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
+                <p class="footer-description"><?php echo get_option('website_description')?></p>
                 <ul class="social-links">
                     <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/ig-icon.svg"></a></li>
                     <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/dribbble-icon.svg"></a></li>
@@ -12,42 +12,61 @@
                 </ul>
             </div>
             <div class="footer-col footer-links">
-                <p class="footer-col-title">Quick Links</p>
-                <ul>
-                    <li><a href="#">Classes</a></li>
-                    <li><a href="#">Timetable</a></li>
-                    <li><a href="#">Clubs</a></li>
-                    <li><a href="#">Nutrition</a></li>
-                    <li><a href="#">Free Trial</a></li>
-                </ul>
+                <p class="footer-col-title"><?php echo get_option('footer_main_1_title')?></p>
+                <?php
+                    wp_nav_menu( [
+                        'theme_location'  => 'footer_main_1',
+                        'menu'            => '',
+                        'container'       => false,
+                        'menu_class'      => 'menu',
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul>%3$s</ul>',
+                        'depth'           => 0,
+                    ] );
+                ?>
             </div>
             <div class="footer-col footer-links">
-                <p class="footer-col-title">Guides</p>
-                <ul>
-                    <li><a href="#">Weight Loss</a></li>
-                    <li><a href="#">Strength Gain</a></li>
-                    <li><a href="#">Crossfit</a></li>
-                    <li><a href="#">Washbaord Abs</a></li>
-                    <li><a href="#">Dieting</a></li>
-                </ul>
+                <p class="footer-col-title"><?php echo get_option('footer_main_2_title')?></p>
+                <?php
+                    wp_nav_menu( [
+                        'theme_location'  => 'footer_main_2',
+                        'menu'            => '',
+                        'container'       => false,
+                        'menu_class'      => 'menu',
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul>%3$s</ul>',
+                        'depth'           => 0,
+                    ] );
+                ?>
             </div>
             <div class="footer-col footer-contacts">
-                <p class="footer-col-title">Reach us</p>
+                <p class="footer-col-title"><?php echo get_option('footer_main_3_title')?></p>
                 <ul>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/email-icon.svg">admin@goodlyfe.co</a></li>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/phone-icon.svg">+88 98765 43210</a></li>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/location-icon.svg">90210 Beverly Hills <br>California USA</a></li>
+                    <li><a href="mailto:<?php echo get_option('email_address')?>"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/email-icon.svg"><?php echo get_option('email_address')?></a></li>
+                    <li><a href="tel:<?php echo preg_replace('/[()\s]/', '', get_option('phone_number'))?>"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/phone-icon.svg"><?php echo get_option('phone_number')?></a></li>
+                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/location-icon.svg"><?php echo wp_kses_post(get_option('footer_address')); ?></a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-secondary">
-            <span>© 2020 GoodLyfe. All rights reserved</span>
-            <ul>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Disclaimer</a></li>
-            </ul>
+            <span>© <?php echo date('Y'); ?> Goodlyfe. All rights reserved</span>
+            <?php
+                wp_nav_menu( [
+                    'theme_location'  => 'footer_secondary',
+                    'menu'            => '',
+                    'container'       => false,
+                    'menu_class'      => 'menu',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'items_wrap'      => '<ul>%3$s</ul>',
+                    'depth'           => 0,
+                ] );
+            ?>
         </div>
     </div>
 </footer>

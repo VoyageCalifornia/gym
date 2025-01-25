@@ -131,14 +131,20 @@ nav .logo span {
     color: var(--main-accent-light);
 }
 
-nav ul li a.search {
+nav ul li.search a {
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-nav .search img {
-    max-width: 20px;
+nav .search a:after {
+    content: '';
+    background-image: url("./assets/search-icon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
 }
 
 nav a.login {

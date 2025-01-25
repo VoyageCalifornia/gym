@@ -13,14 +13,19 @@
     <nav>
         <a class="logo" href="/">Good<span>lyfe</span></a>
         <div class="menu-items">
-            <ul>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">Timetable</a></li>
-                <li><a href="#">Clubs</a></li>
-                <li><a href="#">Nutrition</a></li>
-                <li><a href="#">Free Trial</a></li>
-                <li><a class="search" href="#">Search<img src="<?php bloginfo('template_url'); ?>/dist/assets/search-icon.svg"></a></li>
-            </ul>
+            <?php
+                wp_nav_menu( [
+                    'theme_location'  => 'header_menu',
+                    'menu'            => '',
+                    'container'       => false,
+                    'menu_class'      => 'menu',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'items_wrap'      => '<ul>%3$s</ul>',
+                    'depth'           => 0,
+                ] );
+            ?>
             <a class="login" href="#">Login</a>
         </div>
         <div class="menu-mobile">
