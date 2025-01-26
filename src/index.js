@@ -129,7 +129,7 @@ contactForm.onsubmit = e => {
   }).then(json => json.json()).then(result => {
     console.log(result)
     if (result.success) {
-      window.location.href = "thank-you.html";
+      window.location.href = "thank-you/";
     }
   })
 }

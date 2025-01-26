@@ -5,10 +5,34 @@
                 <p class="footer-logo">Good<span>lyfe</span></p>
                 <p class="footer-description"><?php echo get_option('website_description')?></p>
                 <ul class="social-links">
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/ig-icon.svg"></a></li>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/dribbble-icon.svg"></a></li>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/twitter-icon.svg"></a></li>
-                    <li><a href="#"><img loading="lazy" src="<?php bloginfo('template_url'); ?>/dist/assets/yt-icon.svg"></a></li>
+                    <?php 
+                        if (get_option('instagram_link')) {
+                            echo '<li><a href="' . esc_url(get_option('instagram_link')) . '">
+                                <img loading="lazy" src="' . esc_url(get_template_directory_uri() . '/dist/assets/ig-icon.svg') . '">
+                            </a></li>';
+                        }
+                    ?>
+                    <?php 
+                        if (get_option('dribbble_link')) {
+                            echo '<li><a href="' . esc_url(get_option('dribbble_link')) . '">
+                                <img loading="lazy" src="' . esc_url(get_template_directory_uri() . '/dist/assets/dribbble-icon.svg') . '">
+                            </a></li>';
+                        }
+                    ?>
+                    <?php 
+                        if (get_option('twitter_link')) {
+                            echo '<li><a href="' . esc_url(get_option('twitter_link')) . '">
+                                <img loading="lazy" src="' . esc_url(get_template_directory_uri() . '/dist/assets/twitter-icon.svg') . '">
+                            </a></li>';
+                        }
+                    ?>
+                    <?php 
+                        if (get_option('youtube_link')) {
+                            echo '<li><a href="' . esc_url(get_option('youtube_link')) . '">
+                                <img loading="lazy" src="' . esc_url(get_template_directory_uri() . '/dist/assets/yt-icon.svg') . '">
+                            </a></li>';
+                        }
+                    ?>                
                 </ul>
             </div>
             <div class="footer-col footer-links">

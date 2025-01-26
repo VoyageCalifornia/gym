@@ -7,7 +7,9 @@
 
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php if (isset($args['page_type'])): ?>
+    id="<?php echo esc_attr($args['page_type']); ?>"
+<?php endif; ?>>
 
 <header>
     <nav>
